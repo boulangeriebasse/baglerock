@@ -341,6 +341,53 @@
   .tt-upload-text { font-weight: 700; font-size: 1rem; color: #aaa; }
   .tt-upload-hint { font-size: 0.78rem; color: #555; }
 
+  .merch-list {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .merch-list-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border-left: 4px solid;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .merch-list-row.highlight-orange { background: rgba(255,107,0,0.1);  border-color: var(--orange); }
+  .merch-list-row.highlight-green  { background: rgba(123,196,43,0.1); border-color: var(--green); }
+  .merch-list-row.highlight-yellow { background: rgba(255,214,0,0.1);  border-color: var(--yellow); }
+
+  .merch-list-name {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--white);
+  }
+
+  .merch-list-venue {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: #aaa;
+    white-space: nowrap;
+  }
+
+  .merch-list-venue span {
+    font-size: 0.65rem;
+    background: rgba(255,255,255,0.1);
+    padding: 2px 8px;
+    border-radius: 100px;
+    letter-spacing: 1px;
+    margin-left: 6px;
+    vertical-align: middle;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
   /* ========= GOODS BANNER ========= */
   .goods-banner {
     display: flex;
@@ -694,6 +741,38 @@
     to   { transform: translateX(-50%); }
   }
 
+  .hero-video-wrap {
+    margin-top: 28px;
+    width: 100%;
+    max-width: 560px;
+    animation: fadeDown 0.7s 0.6s ease both;
+  }
+
+  .hero-video-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: rgba(0,0,0,0.25);
+    border: 2px dashed rgba(0,0,0,0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .hero-video-icon {
+    font-size: 2.4rem;
+    color: rgba(0,0,0,0.25);
+  }
+
+  .hero-video-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    color: rgba(0,0,0,0.25);
+  }
+
   /* scroll indicator */
   .scroll-hint {
     position: absolute;
@@ -752,6 +831,17 @@
     </div>
 
     <a href="http://tiget.net/events/459357" target="_blank" class="ticket-btn">🎟 チケット予約はこちら</a>
+
+    <div class="hero-video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/EYX3UFv2rwE"
+        title="BAGLE ROCK!! EVENT CM"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="width:100%; aspect-ratio:16/9; border-radius:10px; display:block;">
+      </iframe>
+    </div>
   </div>
 
   <div class="venue-strip">
@@ -794,8 +884,36 @@
     <div class="goods-icon">🛍</div>
     <div class="goods-text">
       <div class="goods-label">GOODS &amp; 物販</div>
-      <div class="goods-title">物販会場は <em>BUSHBASH</em> のロビーが総合物販会場となります。</div>
-      <div class="goods-desc">グッズ・CD等の物販は一部のアーティストを除き BUSHBASH のロビーにて行います。</div>
+      <div class="goods-title">各アーティストの総合物販会場は <em>BUSHBASH</em> ロビーとなります。</div>
+      <div class="goods-desc">一部のアーティストは終演後に出演会場にて物販・特典会を行います。</div>
+    </div>
+  </div>
+
+  <div class="merch-list">
+    <div class="merch-list-row highlight-orange">
+      <div class="merch-list-name">銀幕一楼とTIMECAFE</div>
+      <div class="merch-list-venue">🏛 ORPHEUS <span>20:50〜</span></div>
+    </div>
+    <div class="merch-list-row highlight-orange">
+      <div class="merch-list-name">にっぽんワチャチャ</div>
+      <div class="merch-list-venue">🏛 ORPHEUS <span>13:50〜</span></div>
+    </div>
+    <div class="merch-list-row highlight-green">
+      <div class="merch-list-name">蜂鳥あみ太＝4号+acc田村賢太郎</div>
+      <div class="merch-list-venue">🎵 JOHNNY ANGEL <span>20:00〜</span></div>
+    </div>
+    <div class="merch-list-row highlight-yellow">
+      <div class="merch-list-name">その他全アーティスト</div>
+      <div class="merch-list-venue">🛍 BUSHBASH ロビー <span>総合物販</span></div>
+    </div>
+  </div>
+
+  <div class="goods-banner" style="margin-top:16px">
+    <div class="goods-icon">🥯</div>
+    <div class="goods-text">
+      <div class="goods-label">FOOD</div>
+      <div class="goods-title"><em>Boulangerie BASSE</em></div>
+      <div class="goods-desc">オルフェウスロビーにてパンの販売があります。（売り切れ次第終了）</div>
     </div>
   </div>
 </div>
@@ -807,26 +925,27 @@
     <div class="section-title">出演<em>アーティスト</em></div>
     <div class="artists-grid">
       <a class="artist-tag" href="https://ginmakuichiro.bitfan.id/" target="_blank">銀幕一楼とTIMECAFE</a>
-      <a class="artist-tag" href="https://x.com/rosa_parques" target="_blank">ローザ・パークス</a>
-      <a class="artist-tag" href="https://namuzu.net/" target="_blank">THE 南無ズ</a>
-      <a class="artist-tag" href="https://getbillmonkeys.com/" target="_blank">GET BILL MONKEYS</a>
-      <a class="artist-tag" href="https://asura-syndrome.com/" target="_blank">アシュラシンドローム</a>
-      <a class="artist-tag" href="https://owa-benkei.com/" target="_blank">オワリズム弁慶</a>
-      <a class="artist-tag" href="https://honebone.net/" target="_blank">HONEBONE</a>
-      <a class="artist-tag" href="https://inariiband.wixsite.com/inariofficial-web" target="_blank">Inari</a>
-      <a class="artist-tag" href="https://suket-shudan.wixsite.com/isii-giants" target="_blank">助っ人集団☆石井ジャイアンツ</a>
-      <a class="artist-tag" href="https://x.com/cats_rip" target="_blank">Rip van cats</a>
       <a class="artist-tag" href="https://ailifdopa.com/" target="_blank">アイリフドーパ</a>
-      <a class="artist-tag" href="https://x.com/p8ds_p" target="_blank">VEGASPADE</a>
-      <a class="artist-tag" href="https://romavaca.com/" target="_blank">ロマンス&バカンス</a>
+      <a class="artist-tag" href="https://asura-syndrome.com/" target="_blank">アシュラシンドローム</a>
       <a class="artist-tag" href="https://x.com/empteaband" target="_blank">Emptea</a>
-      <a class="artist-tag" href="https://liiloo.bitfan.id/" target="_blank">リールー</a>
+      <a class="artist-tag" href="https://inariiband.wixsite.com/inariofficial-web" target="_blank">Inari</a>
       <a class="artist-tag" href="https://uranino.com/" target="_blank">ウラニーノ</a>
+      <a class="artist-tag" href="https://owa-benkei.com/" target="_blank">オワリズム弁慶</a>
+      <a class="artist-tag" href="https://x.com/kanomami_blue" target="_blank">加納真実</a>
+      <a class="artist-tag" href="https://getbillmonkeys.com/" target="_blank">GET BILL MONKEYS</a>
+      <a class="artist-tag" href="https://suket-shudan.wixsite.com/isii-giants" target="_blank">助っ人集団☆石井ジャイアンツ</a>
+      <a class="artist-tag" href="https://x.com/Fu_kaname" target="_blank">ただし、叶芽フウカ</a>
+      <a class="artist-tag" href="https://namuzu.net/" target="_blank">THE 南無ズ</a>
       <a class="artist-tag" href="https://nippon.wachachaclub.com/" target="_blank">にっぽんワチャチャ</a>
       <a class="artist-tag" href="http://amita004.web.fc2.com" target="_blank">蜂鳥あみ太＝4号+acc田村賢太郎</a>
+      <a class="artist-tag" href="https://x.com/fuzzpicks" target="_blank">ファズピックス</a>
+      <a class="artist-tag" href="https://x.com/p8ds_p" target="_blank">VEGASPADE</a>
+      <a class="artist-tag" href="https://honebone.net/" target="_blank">HONEBONE</a>
+      <a class="artist-tag" href="https://liiloo.bitfan.id/" target="_blank">リールー</a>
+      <a class="artist-tag" href="https://x.com/cats_rip" target="_blank">Rip van cats</a>
+      <a class="artist-tag" href="https://romavaca.com/" target="_blank">ロマンス&バカンス</a>
       <a class="artist-tag" href="https://x.com/lontana4946" target="_blank">ロンドンタナカ</a>
-      <a class="artist-tag" href="https://x.com/Fu_kaname" target="_blank">ただし、叶芽フウカ</a>
-      <a class="artist-tag" href="https://x.com/kanomami_blue" target="_blank">加納真実</a>
+      <a class="artist-tag" href="https://x.com/rosa_parques" target="_blank">ローザ・パークス</a>
     </div>
   </div>
 </div>
